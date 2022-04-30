@@ -33,7 +33,7 @@ public:
 
     virtual void add(Employee *employee);
     virtual void remove(Employee *employee);
-
+    virtual vector<Employee> directs() const = 0;
 };
 
 
