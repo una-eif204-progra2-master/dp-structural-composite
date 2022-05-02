@@ -23,3 +23,12 @@ void Manager::remove(Employee *employee) {
 vector<Employee *> Manager::directReports() const {
     return directs;
 }
+
+ostream &operator<<(ostream &os, const Manager &manager) {
+    string sDirectReports;
+    for (const auto &direct : manager.directReports()) {
+        sDirectReports += direct->getName() + " - ";
+    }
+    os << static_cast<const Employee &>(manager) << " directs: " << sDirectReports;
+    return os;
+}

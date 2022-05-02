@@ -28,15 +28,15 @@ void Employee::setName(const string &name) {
     Employee::name = name;
 }
 
-ostream &operator<<(ostream &os, const Employee &employee) {
-    os << "id: " << employee.id << " name: " << employee.name;
-    return os;
-}
-
 void Employee::add(Employee *employee) {
 
 }
 
 void Employee::remove(Employee *employee) {
 
+}
+
+ostream &operator<<(ostream &os, const Employee &employee) {
+    os << "id: " << employee.id << " name: " << employee.name;
+    return os;
 }

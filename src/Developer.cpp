@@ -15,3 +15,8 @@ vector<Employee *> Developer::directReports() const {
 Developer::~Developer() {
 
 }
+
+ostream &operator<<(ostream &os, const Developer &developer) {
+    os << static_cast<const Employee &>(developer);
+    return os;
+}

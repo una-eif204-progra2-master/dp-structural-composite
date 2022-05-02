@@ -5,6 +5,8 @@
 #ifndef DP_STRUCTURAL_COMPOSITE_MANAGER_H
 #define DP_STRUCTURAL_COMPOSITE_MANAGER_H
 #include <vector>
+#include <ostream>
+
 using namespace std;
 
 #include "Employee.h"
@@ -24,6 +26,8 @@ public:
     void remove(Employee *employee) override;
 
     vector<Employee *> directReports() const override;
+
+    friend ostream &operator<<(ostream &os, const Manager &manager);
 };
 
 

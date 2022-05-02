@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Developer.h"
 #include "Manager.h"
+#include "Organization.h"
 
 using namespace std;
 
@@ -23,14 +24,26 @@ int main() {
     Developer developer4 (4, "Emma");
     Developer developer5 (5, "Sebastian");
 
-    Manager manager1 (1, "Mike");
-    manager1.add(developer1);
-    Manager manager2 (2, "Clarisa");
-    Manager manager3 (3, "Victor");
+    Manager manager1 (6, "Mike");
+    manager1.add(&developer1);
+    manager1.add(&developer2);
+    Manager manager2 (7, "Clarisa");
+    manager2.add(&developer3);
+    manager2.add(&developer4);
+    manager2.add(&developer5);
 
+    Organization organization;
+    organization.setId(1);
+    organization.setName("Akamai Technologies");
+    organization.add(&developer1);
+    organization.add(&developer2);
+    organization.add(&developer3);
+    organization.add(&developer4);
+    organization.add(&developer5);
+    organization.add(&manager1);
+    organization.add(&manager2);
 
-
-
+    cout  << "------Organization: " << endl << organization << endl;
 
     return 0;
 }
