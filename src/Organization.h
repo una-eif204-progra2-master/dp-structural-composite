@@ -12,7 +12,6 @@
 using namespace std;
 
 class Organization : public Employee{
-    string name;
     vector<Employee*> employeeList;
 public:
     Organization();
